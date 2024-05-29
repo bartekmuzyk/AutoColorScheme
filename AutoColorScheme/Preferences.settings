@@ -1,0 +1,12 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="AutoColorScheme" GeneratedClassName="Preferences">
+  <Profiles />
+  <Settings>
+    <Setting Name="light" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">14</Value>
+    </Setting>
+    <Setting Name="dark" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">41</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
