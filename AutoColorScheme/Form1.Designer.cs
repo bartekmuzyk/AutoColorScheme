@@ -37,6 +37,7 @@
             bottomLabel = new Label();
             schemeChangeTimer = new System.Windows.Forms.Timer(components);
             panel1 = new Panel();
+            autoStartCheckBox = new CheckBox();
             tray = new NotifyIcon(components);
             panel1.SuspendLayout();
             SuspendLayout();
@@ -44,7 +45,7 @@
             // label1
             // 
             label1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            label1.Location = new Point(180, 8);
+            label1.Location = new Point(185, 8);
             label1.Name = "label1";
             label1.Size = new Size(114, 15);
             label1.TabIndex = 0;
@@ -58,7 +59,7 @@
             darkSchemeTimeChooser.DropDownStyle = ComboBoxStyle.DropDownList;
             darkSchemeTimeChooser.FormattingEnabled = true;
             darkSchemeTimeChooser.IntegralHeight = false;
-            darkSchemeTimeChooser.Location = new Point(180, 26);
+            darkSchemeTimeChooser.Location = new Point(185, 26);
             darkSchemeTimeChooser.Name = "darkSchemeTimeChooser";
             darkSchemeTimeChooser.Size = new Size(114, 23);
             darkSchemeTimeChooser.TabIndex = 1;
@@ -86,9 +87,9 @@
             // 
             bottomLabel.Dock = DockStyle.Bottom;
             bottomLabel.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 238);
-            bottomLabel.Location = new Point(0, 59);
+            bottomLabel.Location = new Point(0, 87);
             bottomLabel.Name = "bottomLabel";
-            bottomLabel.Size = new Size(306, 23);
+            bottomLabel.Size = new Size(311, 23);
             bottomLabel.TabIndex = 4;
             bottomLabel.Text = "Przełączenie trybu może spóźnić się do 10 minut.";
             bottomLabel.TextAlign = ContentAlignment.MiddleCenter;
@@ -101,6 +102,7 @@
             // 
             // panel1
             // 
+            panel1.Controls.Add(autoStartCheckBox);
             panel1.Controls.Add(label2);
             panel1.Controls.Add(label1);
             panel1.Controls.Add(darkSchemeTimeChooser);
@@ -108,8 +110,20 @@
             panel1.Dock = DockStyle.Fill;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(306, 59);
+            panel1.Size = new Size(311, 87);
             panel1.TabIndex = 5;
+            // 
+            // autoStartCheckBox
+            // 
+            autoStartCheckBox.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            autoStartCheckBox.AutoSize = true;
+            autoStartCheckBox.Location = new Point(12, 65);
+            autoStartCheckBox.Name = "autoStartCheckBox";
+            autoStartCheckBox.Size = new Size(75, 19);
+            autoStartCheckBox.TabIndex = 4;
+            autoStartCheckBox.Text = "Autostart";
+            autoStartCheckBox.UseVisualStyleBackColor = true;
+            autoStartCheckBox.CheckedChanged += autoStartCheckBox_CheckedChanged;
             // 
             // tray
             // 
@@ -122,7 +136,7 @@
             // 
             AutoScaleDimensions = new SizeF(96F, 96F);
             AutoScaleMode = AutoScaleMode.Dpi;
-            ClientSize = new Size(306, 82);
+            ClientSize = new Size(311, 110);
             Controls.Add(panel1);
             Controls.Add(bottomLabel);
             FormBorderStyle = FormBorderStyle.FixedSingle;
@@ -137,6 +151,7 @@
             FormClosing += Form1_FormClosing;
             Load += Form1_Load;
             panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -150,5 +165,6 @@
         private System.Windows.Forms.Timer schemeChangeTimer;
         private Panel panel1;
         private NotifyIcon tray;
+        private CheckBox autoStartCheckBox;
     }
 }

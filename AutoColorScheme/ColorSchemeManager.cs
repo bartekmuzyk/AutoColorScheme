@@ -88,6 +88,9 @@ namespace AutoColorScheme
 #if DEBUG
             Debug.WriteLine("Set!");
 #endif
+
+            GC.Collect();  // Force garbage collection to prevent memory leaks
+            // Need to think how to prevent memory leaks properly
         }
     }
 }
